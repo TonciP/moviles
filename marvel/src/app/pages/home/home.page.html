@@ -1,0 +1,92 @@
+<app-header title="MARVEL"></app-header>
+<ion-content [scrollEvents]="true">
+  <ion-text color="dark" id="title-welcome">
+    <p>Bienvenidoa Marvel Heroes</p>
+  </ion-text>
+  <ion-text color="dark" id="title-person">
+    <h2>Seleccione su personaje</h2>
+  </ion-text>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="display: flex; justify-content: space-around;">
+        <ion-avatar >
+            <img src="../../../assets/icons/hero.svg"  id="svgheroes">
+
+            <a href='#primero'>primero</a>
+        </ion-avatar>
+        <ion-avatar>
+          <img src="../../../assets/icons/villain.svg" id="svgvillains">
+        </ion-avatar>
+        <ion-avatar>
+          <img src="../../../assets/icons/antihero.svg" id="svgantiheroes">
+        </ion-avatar>
+        <ion-avatar>
+          <img src="../../../assets/icons/alien.svg" id="svgaliens">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <h2 >Heroes</h2>
+    <ion-row>
+      
+      <ion-col *ngFor="let item of heroes.json.heroes">
+        <div class="conten-car">
+          <ion-img [routerLink]="['/detailperson/', item.name]" src="../../../assets/{{item.imagePath}}"></ion-img>
+          <p style="position: absolute; left: 0px; bottom: 10%;">{{item.alterEgo}}</p>
+          <p style="position: absolute; left: 0px; bottom: 0%;">{{item.name}}</p>
+        </div>      
+      </ion-col>
+    </ion-row>
+    <h2>Villanos</h2>
+    <ion-row>
+      
+      <ion-col *ngFor="let item of heroes.json.villains">
+        <div class="conten-car">
+          <ion-img [routerLink]="['/detailperson/', item.name]" src="../../../assets/{{item.imagePath}}"></ion-img>
+          <p style="position: absolute; left: 5px; bottom: 10%;">{{item.alterEgo}}</p>
+          <p style="position: absolute; left: 5px; bottom: 0%;">{{item.name}}</p>
+        </div>
+            
+      </ion-col>
+    </ion-row>
+    <h2>Anti-Heroes</h2>
+    <ion-row>
+      
+      <ion-col *ngFor="let item of heroes.json.antiHeroes">
+        
+        <div class="conten-car">
+          <ion-img [routerLink]="['/detailperson/', item.name]" src="../../../assets/{{item.imagePath}}"></ion-img>
+          <p style="position: absolute; left: 5px; bottom: 10%;">{{item.alterEgo}}</p>
+          <p style="position: absolute; left: 5px; bottom: 0%;">{{item.name}}</p>
+        </div>
+    
+      </ion-col>
+    </ion-row>
+    <h2>Alien</h2>
+    <ion-row>
+      
+      <ion-col *ngFor="let item of heroes.json.aliens">
+        
+        <div class="conten-car">
+          <ion-img [routerLink]="['/detailperson/', item.name]" src="../../../assets/{{item.imagePath}}"></ion-img>
+          <p style="position: absolute; left: 5px; bottom: 10%;">{{item.alterEgo}}</p>
+          <p style="position: absolute; left: 5px; bottom: 0%;">{{item.name}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <h2 name="primero" id="primero">Humano</h2>
+    <ion-row>
+      
+      <ion-col *ngFor="let item of heroes.json.humans">
+        
+        <div class="conten-car">
+          <ion-img [routerLink]="['/detailperson/', item.name]" src="../../../assets/{{item.imagePath}}"></ion-img>
+          <p style="position: absolute; left: 5px; bottom: 10%;">{{item.alterEgo}}</p>
+          <p style="position: absolute; left: 5px; bottom: 0%;">{{item.name}}</p>
+        </div>     
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

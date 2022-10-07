@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons *ngIf="!searchBox" slot="start">
+      <ion-menu-button color="primary" menu="Principal"></ion-menu-button>
+    </ion-buttons>
+    <ion-title *ngIf="!searchBox">{{ title }}</ion-title>
+    <ion-searchbar *ngIf="searchBox" placeholder="Buscar Pelicula" 
+    showCancelButton="focus" (ionCancel)="focus()" (ionChange)="buscar()" [(ngModel)]="busqueda" (ionBlur)="stadoLista()">
+
+    </ion-searchbar>
+    <ion-buttons *ngIf="!searchBox" slot="end">
+      <ion-button (click)="clickedSearch()" >
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-list *ngIf="searchBox" >
+  
+  <ion-item  *ngFor="let nombres of listaNombres">
+      
+    <a href="/detailperson/{{nombres}}" style="text-decoration: none; color: white;">{{nombres}}</a>
+  </ion-item>
+  <!--ion-item *ngFor="let personaje of heroes">
+    {{personaje.name}}
+  </ion-item>
+  <ion-item *ngFor="let personaje of villains">
+    {{personaje.name}}
+  </ion-item>
+  <ion-item *ngFor="let personaje of antihero">
+    {{personaje.name}}
+  </ion-item>
+  <ion-item *ngFor="let personaje of aliens">
+    {{personaje.name}}
+  </ion-item>
+  <ion-item *ngFor="let personaje of humans">
+    {{personaje.name}}
+  </ion-item-->
+</ion-list>

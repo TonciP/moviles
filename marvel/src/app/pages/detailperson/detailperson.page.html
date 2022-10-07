@@ -1,0 +1,441 @@
+<!--ion-header>
+  <ion-toolbar>
+    <ion-title>detailperson</ion-title>
+  </ion-toolbar>
+</ion-header-->
+
+<!--ion-content [ngStyle]="{'background-image': 'url(../../../assets/'+ heroes.imagePath +')'}"-->
+<ion-content style="--background: url('../../../assets/{{pahtfondo}}');">
+  
+  <div id="contenedor" *ngIf="heroes">
+    <p >
+      {{heroes.alterEgo}}
+    </p>
+    <h2>
+      {{heroes.name}}
+    </h2>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          {{ 2022 - heroes.caracteristics.birth}} anos
+        </ion-col>
+        <ion-col>
+          {{ heroes.caracteristics.weight.value + ' ' + heroes.caracteristics.weight.unity }}
+        </ion-col>
+        <ion-col>
+          {{ heroes.caracteristics.height.value + ' ' + heroes.caracteristics.height.unity}}
+        </ion-col>
+        <ion-col>
+          {{ heroes.caracteristics.universe}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-text>
+      {{heroes.biography}}
+    </ion-text>
+    <ion-text>
+      <h3>
+        Habilidades
+      </h3>
+    </ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h4>Fuerza</h4>
+          <ion-progress-bar value="{{heroes.abilities.force / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Inteligencia</h4>
+          <ion-progress-bar value="{{heroes.abilities.intelligence / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Agilidad</h4>
+          <ion-progress-bar value="{{heroes.abilities.agility / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Dureza</h4>
+          <ion-progress-bar value="{{heroes.abilities.endurance / 100}}"></ion-progress-bar>
+        
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Velocidad</h4>
+          <ion-progress-bar value="{{heroes.abilities.velocity / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+    <ion-text>
+      <h3>
+        Filmaciones
+      </h3>
+    </ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let peliculas of heroes.movies">
+          <ion-img src="../../../assets/{{peliculas}}"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div id="contenedor" *ngIf="villains">
+    <p >
+      {{villains.alterEgo}}
+    </p>
+    <h2>
+      {{villains.name}}
+    </h2>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          {{ 2022 - villains.caracteristics.birth}} anos
+        </ion-col>
+        <ion-col>
+          {{ villains.caracteristics.weight.value + ' ' + villains.caracteristics.weight.unity }}
+        </ion-col>
+        <ion-col>
+          {{ villains.caracteristics.height.value + ' ' + villains.caracteristics.height.unity}}
+        </ion-col>
+        <ion-col>
+          {{ villains.caracteristics.universe}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-text>
+      {{villains.biography}}
+    </ion-text>
+    <ion-text>
+      <h3>
+        Habilidades
+      </h3>
+    </ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h4>Fuerza</h4>
+          <ion-progress-bar value="{{villains.abilities.force / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Inteligencia</h4>
+          <ion-progress-bar value="{{villains.abilities.intelligence / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Agilidad</h4>
+          <ion-progress-bar value="{{villains.abilities.agility / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Dureza</h4>
+          <ion-progress-bar value="{{villains.abilities.endurance / 100}}"></ion-progress-bar>
+        
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Velocidad</h4>
+          <ion-progress-bar value="{{villains.abilities.velocity / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+    <ion-text>
+      <h3>
+        Filmaciones
+      </h3>
+    </ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let peliculas of villains.movies">
+          <ion-img src="../../../assets/{{peliculas}}"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div id="contenedor" *ngIf="antihero">
+    <p >
+      {{antihero.alterEgo}}
+    </p>
+    <h2>
+      {{antihero.name}}
+    </h2>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          {{ 2022 - antihero.caracteristics.birth}} anos
+        </ion-col>
+        <ion-col>
+          {{ antihero.caracteristics.weight.value + ' ' + antihero.caracteristics.weight.unity }}
+        </ion-col>
+        <ion-col>
+          {{ antihero.caracteristics.height.value + ' ' + antihero.caracteristics.height.unity}}
+        </ion-col>
+        <ion-col>
+          {{ antihero.caracteristics.universe}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-text>
+      {{antihero.biography}}
+    </ion-text>
+    <ion-text>
+      <h3>
+        Habilidades
+      </h3>
+    </ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h4>Fuerza</h4>
+          <ion-progress-bar value="{{antihero.abilities.force / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Inteligencia</h4>
+          <ion-progress-bar value="{{antihero.abilities.intelligence / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Agilidad</h4>
+          <ion-progress-bar value="{{antihero.abilities.agility / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Dureza</h4>
+          <ion-progress-bar value="{{antihero.abilities.endurance / 100}}"></ion-progress-bar>
+        
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Velocidad</h4>
+          <ion-progress-bar value="{{antihero.abilities.velocity / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+    <ion-text>
+      <h3>
+        Filmaciones
+      </h3>
+    </ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let peliculas of antihero.movies">
+          <ion-img src="../../../assets/{{peliculas}}"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div id="contenedor" *ngIf="aliens">
+    <p >
+      {{aliens.alterEgo}}
+    </p>
+    <h2>
+      {{aliens.name}}
+    </h2>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          {{ 2022 - aliens.caracteristics.birth}} anos
+        </ion-col>
+        <ion-col>
+          {{ aliens.caracteristics.weight.value + ' ' + aliens.caracteristics.weight.unity }}
+        </ion-col>
+        <ion-col>
+          {{ aliens.caracteristics.height.value + ' ' + aliens.caracteristics.height.unity}}
+        </ion-col>
+        <ion-col>
+          {{ aliens.caracteristics.universe}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-text>
+      {{aliens.biography}}
+    </ion-text>
+    <ion-text>
+      <h3>
+        Habilidades
+      </h3>
+    </ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h4>Fuerza</h4>
+          <ion-progress-bar value="{{aliens.abilities.force / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Inteligencia</h4>
+          <ion-progress-bar value="{{aliens.abilities.intelligence / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Agilidad</h4>
+          <ion-progress-bar value="{{aliens.abilities.agility / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Dureza</h4>
+          <ion-progress-bar value="{{aliens.abilities.endurance / 100}}"></ion-progress-bar>
+        
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Velocidad</h4>
+          <ion-progress-bar value="{{aliens.abilities.velocity / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+    <ion-text>
+      <h3>
+        Filmaciones
+      </h3>
+    </ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let peliculas of aliens.movies">
+          <ion-img src="../../../assets/{{peliculas}}"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div id="contenedor" *ngIf="humans">
+    <p >
+      {{humans.alterEgo}}
+    </p>
+    <h2>
+      {{humans.name}}
+    </h2>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          {{ 2022 - humans.caracteristics.birth}} anos
+        </ion-col>
+        <ion-col>
+          {{ humans.caracteristics.weight.value + ' ' + humans.caracteristics.weight.unity }}
+        </ion-col>
+        <ion-col>
+          {{ humans.caracteristics.height.value + ' ' + humans.caracteristics.height.unity}}
+        </ion-col>
+        <ion-col>
+          {{ humans.caracteristics.universe}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-text>
+      {{humans.biography}}
+    </ion-text>
+    <ion-text>
+      <h3>
+        Habilidades
+      </h3>
+    </ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h4>Fuerza</h4>
+          <ion-progress-bar value="{{humans.abilities.force / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Inteligencia</h4>
+          <ion-progress-bar value="{{humans.abilities.intelligence / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Agilidad</h4>
+          <ion-progress-bar value="{{humans.abilities.agility / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Dureza</h4>
+          <ion-progress-bar value="{{humans.abilities.endurance / 100}}"></ion-progress-bar>
+        
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Velocidad</h4>
+          <ion-progress-bar value="{{humans.abilities.velocity / 100}}"></ion-progress-bar>
+          
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+    <ion-text>
+      <h3>
+        Filmaciones
+      </h3>
+    </ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let peliculas of humans.movies">
+          <ion-img src="../../../assets/{{peliculas}}"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  
+</ion-content>
