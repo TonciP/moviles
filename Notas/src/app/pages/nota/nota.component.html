@@ -1,0 +1,25 @@
+<ion-list>
+<ion-item-sliding *ngFor="let nota of listaNotas" id="{{ nota.id }}">
+  <ion-item>
+    <div class="{{ nota.id }}" id="{{ nota.id }}" style="display: flex;">
+      <ion-label class="ion-text-wrap" name="texto">
+        <h2>
+          {{ nota.id }}
+        </h2>
+      </ion-label>
+      <ion-textarea id="texto" name="texto" value="{{nota.texto}}" (ionBlur)="editar($event, nota.id)" ></ion-textarea>
+    </div>
+  </ion-item>
+  <ion-item-options side="end">
+    <ion-button (click)="delete(nota.id)">Eliminar</ion-button>
+    <ion-select value="Color" (ionChange)="color($event, nota.id)">
+      <ion-select-option selected value="Color"  >Color</ion-select-option>
+      <ion-select-option value="brown" >Brown</ion-select-option>
+      <ion-select-option value="blue">Blue</ion-select-option>
+      <ion-select-option value="black" >Black</ion-select-option>
+      <ion-select-option value="red">Red</ion-select-option>
+    </ion-select>
+  </ion-item-options>
+</ion-item-sliding>
+
+</ion-list>
